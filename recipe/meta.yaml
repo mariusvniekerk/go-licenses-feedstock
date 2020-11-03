@@ -12,6 +12,7 @@ source:
   sha256: fbd30c6704a02fdce0fbc1ebf8b07871a9c4db9fc87c14a5b08dfcdc1bc7739f
   patches:
     - 0001-Add-path-to-license-archive-relative-to-executable.patch
+    - 0002-Recognize-more-license-file-name-patterns.patch
 
 build:
   number: 1
