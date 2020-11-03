@@ -5,11 +5,9 @@ Home: https://github.com/google/go-licenses
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/go-licenses-feedstock/blob/master/LICENSE.txt)
 
 Summary: A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.
-
-
 
 Current build status
 ====================
@@ -150,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@dhirschfeld](https://github.com/dhirschfeld/)
+* [@mbargull](https://github.com/mbargull/)
 
