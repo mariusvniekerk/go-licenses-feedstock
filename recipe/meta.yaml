@@ -32,7 +32,9 @@ about:
   home: https://github.com/google/go-licenses
   license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - thirdparty-licenses.txt
   summary: 'A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.'
 
 extra:
