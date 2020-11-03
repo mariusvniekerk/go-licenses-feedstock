@@ -20,6 +20,9 @@ requirements:
   build:
     - {{ compiler('go') }}
     - posix  # [win]
+  host:
+  run:
+    - go
 
 test:
   commands:
