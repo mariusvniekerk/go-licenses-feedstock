@@ -1,14 +1,14 @@
-{% set name = "go-licenses" %}
+# NOTE: The package version does not correspond to an upstream version but
+#       rather denotes the commit number. E.g., "0.0.35" is the 35th commit.
 {% set version = "0.0.35" %}
-{% set sha = "f29a4c695c3d0bedb950061032f97e90aa28d846" %}
-
+{% set commit = "f29a4c695c3d0bedb950061032f97e90aa28d846" %}
 
 package:
-  name: {{ name|lower }}
+  name: go-licenses
   version: {{ version }}
 
 source:
-  url: https://github.com/google/{{ name }}/archive/{{ sha }}.zip
+  url: https://github.com/google/go-licenses/archive/{{ commit }}.zip
   sha256: fbd30c6704a02fdce0fbc1ebf8b07871a9c4db9fc87c14a5b08dfcdc1bc7739f
   patches:
     - 0001-Add-path-to-license-archive-relative-to-executable.patch
@@ -40,3 +40,4 @@ about:
 extra:
   recipe-maintainers:
     - dhirschfeld
+    - mbargull
