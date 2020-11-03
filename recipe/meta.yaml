@@ -1,15 +1,23 @@
-{% set name = "go-licenses" %}
-{% set version = "0.0.35" %}
-{% set sha = "f29a4c695c3d0bedb950061032f97e90aa28d846" %}
-
+# NOTE: The package version does not correspond to an upstream version but
+#       rather denotes the commit number. E.g., "0.0.35" is the 35th commit.
+{% set version = "0.0.36" %}
+{% set commit = "73411c8fa237ccc6a75af79d0a5bc021c9487aad" %}
 
 package:
-  name: {{ name|lower }}
+  name: go-licenses
   version: {{ version }}
 
 source:
-  url: https://github.com/google/{{ name }}/archive/{{ sha }}.zip
-  sha256: fbd30c6704a02fdce0fbc1ebf8b07871a9c4db9fc87c14a5b08dfcdc1bc7739f
+  - url: https://github.com/google/go-licenses/archive/{{ commit }}.tar.gz
+    sha256: e3db1d49696e0c77995c4561a1abedca7c50ebece3b4864aeed963657d12a961
+    patches:
+      - 0001-Add-path-to-license-archive-relative-to-executable.patch
+      - 0002-Recognize-more-license-file-name-patterns.patch
+  - url: https://github.com/google/licenseclassifier/archive/{{ licenseclassifier_commit }}.tar.gz
+    sha256: 7fc0b149b44e263d8d58bfadee7c789b62b2c3f7ff7e51fd6e861a61e2143930
+    folder: licenseclassifier-{{ licenseclassifier_commit }}
+    patches:
+      - 0001-Use-filepath.IsAbs.patch
 
 build:
   number: 0
@@ -18,19 +26,30 @@ requirements:
   build:
     - {{ compiler('go') }}
     - posix  # [win]
+  host:
+  run:
+    - go
 
 test:
   commands:
-    - test -f $PREFIX/bin/go-licenses  # [unix]
-    - if not exist %PREFIX%\\bin\\go-licenses.exe exit 1  # [win]
+    - export GOPATH="$(pwd)/gopath"  # [not win]
+    - set "GOPATH=%CD%/gopath"  # [win]
+    - go get -d "github.com/google/go-licenses"
+    - go-licenses csv "github.com/google/go-licenses"
+  requires:
+    - git
+    - go
 
 about:
   home: https://github.com/google/go-licenses
   license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - thirdparty-licenses.txt
   summary: 'A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.'
 
 extra:
   recipe-maintainers:
     - dhirschfeld
+    - mbargull
