@@ -1,6 +1,8 @@
---- licenses/classifier.go
-+++ licenses/classifier.go
-@@ -17,10 +17,32 @@
+diff --git a/licenses/classifier.go b/licenses/classifier.go
+index ee17b2f..6dcb163 100644
+--- a/licenses/classifier.go
++++ b/licenses/classifier.go
+@@ -17,10 +17,32 @@ package licenses
  import (
  	"fmt"
  	"io/ioutil"
@@ -33,7 +35,7 @@
  // Type identifies a class of software license.
  type Type string
  
-@@ -75,7 +97,8 @@
+@@ -75,7 +97,8 @@ type googleClassifier struct {
  // NewClassifier creates a classifier that requires a specified confidence threshold
  // in order to return a positive license classification.
  func NewClassifier(confidenceThreshold float64) (Classifier, error) {

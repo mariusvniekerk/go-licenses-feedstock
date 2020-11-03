@@ -1,21 +1,21 @@
 # NOTE: The package version does not correspond to an upstream version but
 #       rather denotes the commit number. E.g., "0.0.35" is the 35th commit.
-{% set version = "0.0.35" %}
-{% set commit = "f29a4c695c3d0bedb950061032f97e90aa28d846" %}
+{% set version = "0.0.36" %}
+{% set commit = "73411c8fa237ccc6a75af79d0a5bc021c9487aad" %}
 
 package:
   name: go-licenses
   version: {{ version }}
 
 source:
-  url: https://github.com/google/go-licenses/archive/{{ commit }}.zip
-  sha256: fbd30c6704a02fdce0fbc1ebf8b07871a9c4db9fc87c14a5b08dfcdc1bc7739f
+  url: https://github.com/google/go-licenses/archive/{{ commit }}.tar.gz
+  sha256: e3db1d49696e0c77995c4561a1abedca7c50ebece3b4864aeed963657d12a961
   patches:
     - 0001-Add-path-to-license-archive-relative-to-executable.patch
     - 0002-Recognize-more-license-file-name-patterns.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
