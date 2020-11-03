@@ -26,7 +26,13 @@ requirements:
 
 test:
   commands:
+    - export GOPATH="$(pwd)/gopath"  # [not win]
+    - set "GOPATH=%CD%/gopath"  # [win]
+    - go get -d "github.com/google/go-licenses"
     - go-licenses csv "github.com/google/go-licenses"
+  requires:
+    - git
+    - go
 
 about:
   home: https://github.com/google/go-licenses
