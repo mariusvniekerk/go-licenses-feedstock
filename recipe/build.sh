@@ -5,11 +5,16 @@ set -ex
 GOBIN=$(go env GOBIN)
 export GOBIN=$GOBIN
 
+go get -d github.com/google/go-licenses
+# Copy our patched vendored source before starting the build.
+cp -r \
+  licenseclassifier-${licenseclassifier_commit}/* \
+  "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/
 go get -v github.com/google/go-licenses
 
 mkdir -p "${PREFIX}/share/go-licenses"
 cp \
-  "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier*/licenses/licenses.db \
+  "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/licenses/licenses.db \
   "${PREFIX}/share/go-licenses/"
 
 
