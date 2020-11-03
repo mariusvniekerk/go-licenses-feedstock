@@ -7,10 +7,11 @@ export GOBIN=$GOBIN
 
 go get -d github.com/google/go-licenses
 # Copy our patched vendored source before starting the build.
-rm -rf "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/*
-cp -r \
-  licenseclassifier-${licenseclassifier_commit}/* \
-  "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/
+if [[ ${target_platform} == win-* ]] ; then
+  cp -r \
+    licenseclassifier-${licenseclassifier_commit}/* \
+    "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/
+fi
 go get -v github.com/google/go-licenses
 
 mkdir -p "${PREFIX}/share/go-licenses"
