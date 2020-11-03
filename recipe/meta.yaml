@@ -10,9 +10,11 @@ package:
 source:
   url: https://github.com/google/{{ name }}/archive/{{ sha }}.zip
   sha256: fbd30c6704a02fdce0fbc1ebf8b07871a9c4db9fc87c14a5b08dfcdc1bc7739f
+  patches:
+    - 0001-Add-path-to-license-archive-relative-to-executable.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:

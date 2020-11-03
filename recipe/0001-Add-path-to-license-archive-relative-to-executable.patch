@@ -1,0 +1,45 @@
+--- licenses/classifier.go
++++ licenses/classifier.go
+@@ -17,10 +17,32 @@
+ import (
+ 	"fmt"
+ 	"io/ioutil"
++	"os"
++	"path/filepath"
+ 
+ 	"github.com/google/licenseclassifier"
+ )
+ 
++func GetExePath() string {
++	exePath, err := os.Executable()
++	if err == nil {
++		return exePath
++	}
++	exeRealPath, err := filepath.EvalSymlinks(exePath)
++	if err == nil {
++		return exeRealPath
++	}
++	panic(err)
++}
++
++func GetLicenseArchivePath() string {
++	return filepath.Join(
++		filepath.Dir(GetExePath()),
++		"..", "share", "go-licenses",
++		licenseclassifier.LicenseArchive,
++	)
++}
++
+ // Type identifies a class of software license.
+ type Type string
+ 
+@@ -75,7 +97,8 @@
+ // NewClassifier creates a classifier that requires a specified confidence threshold
+ // in order to return a positive license classification.
+ func NewClassifier(confidenceThreshold float64) (Classifier, error) {
+-	c, err := licenseclassifier.New(confidenceThreshold)
++	licenseArchive := licenseclassifier.Archive(GetLicenseArchivePath())
++	c, err := licenseclassifier.New(confidenceThreshold, licenseArchive)
+ 	if err != nil {
+ 		return nil, err
+ 	}
