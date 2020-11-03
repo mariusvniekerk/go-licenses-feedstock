@@ -23,8 +23,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/bin/go-licenses  # [unix]
-    - if not exist %PREFIX%\\bin\\go-licenses.exe exit 1  # [win]
+    - go-licenses csv "github.com/google/go-licenses"
 
 about:
   home: https://github.com/google/go-licenses
