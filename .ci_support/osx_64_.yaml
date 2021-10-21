@@ -1,13 +1,13 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 go_compiler:
 - go-nocgo
 licenseclassifier_commit:
-- 842c0d70d702
+- 3043a050f148a588e7e0c84dce27579dfe17fd2d
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:

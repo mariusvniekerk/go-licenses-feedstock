@@ -1,14 +1,14 @@
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
-- condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-ppc64le
 go_compiler:
 - go-nocgo
 licenseclassifier_commit:
-- 842c0d70d702
+- 3043a050f148a588e7e0c84dce27579dfe17fd2d
 target_platform:
 - linux-ppc64le
