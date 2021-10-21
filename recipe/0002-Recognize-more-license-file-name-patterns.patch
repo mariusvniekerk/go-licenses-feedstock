@@ -1,12 +1,12 @@
 diff --git a/licenses/find.go b/licenses/find.go
-index 97fa81c..8b0f8df 100644
+index 6bef1cf..8b0f8df 100644
 --- a/licenses/find.go
 +++ b/licenses/find.go
 @@ -23,7 +23,7 @@ import (
  )
- 
+
  var (
--	licenseRegexp = regexp.MustCompile(`^(?i)(LICEN(S|C)E|COPYING|README|NOTICE)(\..+)?$`)
+-	licenseRegexp = regexp.MustCompile(`^(?i)(LICEN(S|C)E|COPYING|README|NOTICE).*$`)
 +	licenseRegexp = regexp.MustCompile(`^(?i)((UN)?LICEN(S|C)E|COPYING|README|NOTICE)([.\-_].+)?$`)
  	srcDirRegexps = func() []*regexp.Regexp {
  		var rs []*regexp.Regexp
