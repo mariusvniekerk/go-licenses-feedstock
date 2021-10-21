@@ -1,7 +1,7 @@
 # NOTE: The package version does not correspond to an upstream version but
 #       rather denotes the commit number. E.g., "0.0.35" is the 35th commit.
-{% set version = "0.0.36" %}
-{% set commit = "73411c8fa237ccc6a75af79d0a5bc021c9487aad" %}
+{% set version = "0.0.44" %}
+{% set commit = "ceb292363ec84358c9a276ef23aa0de893e59b84" %}
 
 package:
   name: go-licenses
@@ -9,12 +9,12 @@ package:
 
 source:
   - url: https://github.com/google/go-licenses/archive/{{ commit }}.tar.gz
-    sha256: e3db1d49696e0c77995c4561a1abedca7c50ebece3b4864aeed963657d12a961
+    sha256: 12e90501e8fd009d60dbc1447330d14329d9cbbd71f24e0dcf4996a9d80b0c80
     patches:
       - 0001-Add-path-to-license-archive-relative-to-executable.patch
       - 0002-Recognize-more-license-file-name-patterns.patch
   - url: https://github.com/google/licenseclassifier/archive/{{ licenseclassifier_commit }}.tar.gz
-    sha256: 7fc0b149b44e263d8d58bfadee7c789b62b2c3f7ff7e51fd6e861a61e2143930
+    sha256: b232b67aa6f859f0e3fef84af9e619f0b668fb3f21773cdb37eb10c0c4a4dcff
     folder: licenseclassifier-{{ licenseclassifier_commit }}
     patches:
       - 0001-Use-filepath.IsAbs.patch
