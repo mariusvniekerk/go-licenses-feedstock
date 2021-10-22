@@ -16,8 +16,6 @@ source:
   - url: https://github.com/google/licenseclassifier/archive/{{ licenseclassifier_commit }}.tar.gz
     sha256: b232b67aa6f859f0e3fef84af9e619f0b668fb3f21773cdb37eb10c0c4a4dcff
     folder: licenseclassifier-{{ licenseclassifier_commit }}
-    patches:
-      - 0001-Use-filepath.IsAbs.patch
 
 build:
   number: 0
