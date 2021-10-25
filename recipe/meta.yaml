@@ -40,7 +40,7 @@ about:
   license_family: Apache
   license_file:
     - LICENSE
-    - thirdparty-licenses.txt
+    - license-files/
   summary: 'A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.'
 
 extra:
