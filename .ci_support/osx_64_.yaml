@@ -7,7 +7,7 @@ channel_targets:
 go_compiler:
 - go-nocgo
 licenseclassifier_commit:
-- 3043a050f148a588e7e0c84dce27579dfe17fd2d
+- 3043a050f148
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:

@@ -9,7 +9,7 @@ docker_image:
 go_compiler:
 - go-nocgo
 licenseclassifier_commit:
-- 3043a050f148a588e7e0c84dce27579dfe17fd2d
+- 3043a050f148
 target_platform:
 - linux-64
 zip_keys:
