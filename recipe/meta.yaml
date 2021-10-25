@@ -11,7 +11,7 @@ source:
   - url: https://github.com/google/go-licenses/archive/{{ commit }}.tar.gz
     sha256: 12e90501e8fd009d60dbc1447330d14329d9cbbd71f24e0dcf4996a9d80b0c80
     patches:
-      - 0002-Recognize-more-license-file-name-patterns.patch
+      - 0001-Recognize-unlicense-file-name-patterns.patch
 
 build:
   number: 0
