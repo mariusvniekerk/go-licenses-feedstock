@@ -5,7 +5,7 @@ set -ex
 GOBIN=$(go env GOBIN)
 export GOBIN=$GOBIN
 
-go get -v github.com/google/go-licenses
+go install -v github.com/google/go-licenses
 
 # If/when https://github.com/conda/conda-build/issues/4121 is supported, the
 # following can be greatly simplified.
