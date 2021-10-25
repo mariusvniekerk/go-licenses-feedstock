@@ -5,24 +5,7 @@ set -ex
 GOBIN=$(go env GOBIN)
 export GOBIN=$GOBIN
 
-go get -d github.com/google/go-licenses
-# Copy our patched vendored source before starting the build.
-if [[ ${target_platform} == win-* ]] ; then
-  cp -r \
-    licenseclassifier-${licenseclassifier_commit}/* \
-    "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/
-fi
 go get -v github.com/google/go-licenses
-
-ls -l "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/
-ls -l "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/licenses/
-
-
-mkdir -p "${PREFIX}/share/go-licenses"
-cp \
-  "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/licenses/licenses.db \
-  "${PREFIX}/share/go-licenses/"
-
 
 # If/when https://github.com/conda/conda-build/issues/4121 is supported, the
 # following can be greatly simplified.

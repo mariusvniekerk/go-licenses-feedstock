@@ -11,11 +11,7 @@ source:
   - url: https://github.com/google/go-licenses/archive/{{ commit }}.tar.gz
     sha256: 12e90501e8fd009d60dbc1447330d14329d9cbbd71f24e0dcf4996a9d80b0c80
     patches:
-      - 0001-Add-path-to-license-archive-relative-to-executable.patch
       - 0002-Recognize-more-license-file-name-patterns.patch
-  - url: https://github.com/google/licenseclassifier/archive/{{ licenseclassifier_commit }}.tar.gz
-    sha256: b232b67aa6f859f0e3fef84af9e619f0b668fb3f21773cdb37eb10c0c4a4dcff
-    folder: licenseclassifier-{{ licenseclassifier_commit }}
 
 build:
   number: 0
