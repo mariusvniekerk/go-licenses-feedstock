@@ -26,10 +26,10 @@ requirements:
 
 test:
   commands:
-    - export GOPATH="$(pwd)/gopath"  # [not win]
-    - set "GOPATH=%CD%/gopath"  # [win]
-    - go get -d "github.com/google/go-licenses"
-    - go-licenses csv "github.com/google/go-licenses"
+    - git clone --depth=1 "https://github.com/google/go-licenses"
+    - cd go-licenses
+    - go-licenses csv . | findstr "Apache-2.0 BSD-.-Clause MIT"             # [win]
+    - go-licenses csv . | grep 'Apache-2\.0\|BSD-.-Clause\|MIT\|Unlicense'  # [not win]
   requires:
     - git
     - go
