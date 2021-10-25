@@ -14,6 +14,10 @@ if [[ ${target_platform} == win-* ]] ; then
 fi
 go get -v github.com/google/go-licenses
 
+ls -l "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/
+ls -l "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/licenses/
+
+
 mkdir -p "${PREFIX}/share/go-licenses"
 cp \
   "${GOPATH:-"$( go env GOPATH )"}"/pkg/mod/github.com/google/licenseclassifier@*-${licenseclassifier_commit}/licenses/licenses.db \
