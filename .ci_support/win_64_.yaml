@@ -1,10 +1,10 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 go_compiler:
 - go-nocgo
 licenseclassifier_commit:
-- 842c0d70d702
+- 3043a050f148
 target_platform:
 - win-64
