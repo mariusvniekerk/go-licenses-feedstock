@@ -6,8 +6,6 @@ channel_targets:
 - conda-forge main
 go_compiler:
 - go-nocgo
-licenseclassifier_commit:
-- 3043a050f148
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
