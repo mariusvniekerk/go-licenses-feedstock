@@ -8,7 +8,5 @@ docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 go_compiler:
 - go-nocgo
-licenseclassifier_commit:
-- 3043a050f148
 target_platform:
 - linux-ppc64le
