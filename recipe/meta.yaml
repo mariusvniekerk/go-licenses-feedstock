@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: go-licenses
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/google/go-licenses/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 1bae3aafe079704f366846adf086cd6592ba2a8e58377dd4b7b9236b209402bb
+    sha256: 3b8dfaeaa31cf4b5e5f55624a6d37a851ab40daf7c96c9bf25ad0489def30ba4
     patches:
       - 0001-Recognize-unlicense-file-name-patterns.patch
 
@@ -38,7 +38,7 @@ about:
   license_file:
     - LICENSE
     - license-files/
-  summary: 'A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.'
+  summary: A tool to collect licenses from the dependency tree of a Go package in order to comply with redistribution terms.
 
 extra:
   recipe-maintainers:
