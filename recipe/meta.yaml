@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: go-licenses
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/google/go-licenses/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 3b8dfaeaa31cf4b5e5f55624a6d37a851ab40daf7c96c9bf25ad0489def30ba4
+    sha256: 0757c90cda8a1cd0969869180ce06109347711e7c5023b429b4a0b77cced674b
     patches:
       - 0001-Recognize-unlicense-file-name-patterns.patch
 
